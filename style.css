@@ -1,0 +1,216 @@
+/* ===== Font ===== */
+@font-face {
+  font-family: 'mountains_of_christmasregular';
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ===== Reset & Body ===== */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+
+
+
+
+body {
+  background-image: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 3s ease-in-out, background-color 3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+
+
+
+.bg-active {
+  background-image: url('./immages/christmas15.jpg');
+}
+
+/* ===== Wrapper ===== */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  gap: clamp(1rem, 2.5vw, 3rem);
+  padding: clamp(1rem, 2vw, 2rem);
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+
+  #dedication {
+    text-align: center;
+    margin-top: 10px; /* فاصله کمی از دکمه */
+    font-size: 1rem;
+    font-weight: 800;
+    font-style: italic;
+    color: #ff0303;
+    font-family: 'Tahoma', sans-serif;
+  }
+
+
+    /* استایل برای پاپ‌آپ */
+  #lovePopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: rgba(255, 192, 203, 0.95); /* صورتی ملایم */
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 60px 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.3);
+    z-index: 9999;
+    opacity: 0;
+  }
+
+/* ===== Button ===== */
+#startAnimation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: clamp(1rem, 1.5vw, 1.5rem);
+  border: 2px solid #FFD700;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-weight: 800;
+  padding: clamp(0.5rem, 1.2vw, 1.2rem) clamp(1rem, 3vw, 2rem);
+  color: #0a0a0a;
+  background: linear-gradient(45deg, #e6a204, #84ff00);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+#startAnimation:hover {
+  border-color: #FF69B4;
+  box-shadow: 0 0 clamp(0.9375rem, 1vw, 1rem) #FFD700,
+              0 0 clamp(1.875rem, 2vw, 2rem) #FF5733;
+  transform: scale(1.05);
+}
+
+#startAnimation span {
+  margin-left: clamp(1rem, 3vw, 1.5rem);
+  margin-left: 2rem;
+}
+
+#startAnimation img {
+  width: 5rem;
+  height: auto;
+  position: absolute;
+  top: -0.4rem;
+  left: -1rem;
+}
+
+
+.messageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  margin-top: 7rem;
+}
+
+
+
+/* .line {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s ease;
+} */
+
+/* ظاهر شدن */
+.line.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* محو شدن نرم */
+.line.hide {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+
+/* ===== SVG ===== */
+svg {
+  width: 90vw;
+  height: 90vh;
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(1rem, 2.5vw, 2rem);
+}
+
+/* ===== Links ===== */
+
+/* ===== End Message ===== */
+#endMessage {
+  margin-top: clamp(1rem, 2vw, 1rem);
+}
+
+
+
+
+.dedication {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.dedication.show {
+  opacity: 1;
+}
+
+
+.line {
+  opacity: 0;
+  transform: translateY(-30px);
+  font-size: 2rem;
+  font-style:italic;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: rgb(229, 255, 0);
+  padding:0 4rem;
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s ease;
+
+}
+
+.line.fixed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  font-size: 2rem;
+  font-weight: bold;
+ margin-top: 2.5rem;
+}
+
+
+
+#title {
+  display: none ;
+}
+
+
