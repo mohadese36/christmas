@@ -12,13 +12,15 @@
 <body>
 
 <div class="wrapper">
+
+  <!-- متن تقدیم به آلمانی -->
+<div id="dedication">تقدیم به یکی یدونه قلبم: امین</div>
 <button id="startAnimation">
   <img src="./immages/christmas1.jpg" alt="christmas1">
   <span>😉برو</span>
 </button>
 
-<!-- متن تقدیم به آلمانی -->
-<div id="dedication">تقدیم به یکی یدونه قلبم: امین</div>
+
 
    <div class="dedication" id="dedicationText"></div>
 
@@ -101,9 +103,9 @@
   <div xmlns="http://www.w3.org/1999/xhtml" class="messageWrapper">
     <!-- <div class="endMessage" id="messageGroup"></div> -->
      <div id="messageGroup">
-<div class="line fixed" id="title"> !امین جانم </div>
+    <div class="line fixed" id="title"> !امین جانم </div>
 
-</div>
+  </div>
 
   </div>
 </foreignObject>
@@ -667,186 +669,6 @@ play.addEventListener("click", function() {
 });
 
 </script>
-<!-- 
- <script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const lines = [
-    "Mit dem Beginn des neuen Jahres ist mein Herz voller neuer Liebe und neuer Hoffnung für dich.",
-    " Du bist das schönste Geschenk Gottes. Durch deine Nähe ist mein Leben bunter geworden, und jeder Moment an deiner Seite ist süßer als alle Erinnerungen der Vergangenheit.",
-    "Für das neue Jahr wünsche ich mir, dass wir gemeinsam viele schöne, liebevolle Momente erleben und dass dieses neue Kapitel der Anfang von ganz vielen guten Dingen für uns wird.",
-    "Ich liebe dich und freue mich sehr auf ein Jahr voller Freude und Ruhe an deiner Seite.",
-    "Jeder Tag mit dir ist für mich ein Geschenk.",
-    " Für dieses neue Jahr wünsche ich mir, dass die Wärme deiner Nähe mein Herz immer hell hält und dass wir gemeinsam all unsere Träume erreichen.",
-    "Du bist der Anfang all der schönen Dinge in meinem Leben. Dein Lächeln ist das Schönste, was ich je gesehen habe.",
-    "Draußen ist es kalt, aber mein Herz ist mit dir warm. ",
-    "Du hast meinem Leben Sinn gegeben, und ich bin glücklich, diesen Weg weiterhin an deiner Seite zu gehen. Frohes neues Jahr, meine Liebe.",
-    "Ich wünsche dir ein Jahr voller neuer Freuden, neuer Erfolge und Inspiration. Für mich wünsche ich mir nur: dich niemals zu verlieren."
-  ];
-
-  const box = document.getElementById("messageGroup");
-  const title = document.getElementById("title");
-  const startBtn = document.getElementById("startAnimation");
-  const audio = document.getElementById("christmasAudio");
-
-  let index = 0;
-  let lastLineEl = null;
-
-  function animateNext() {
-    if (index >= lines.length) {
-      // آخرین خط و خط ثابت را همزمان محو کن
-      gsap.to([lastLineEl, title], {
-        opacity: 0,
-        y: 20,
-        duration: 2,
-        ease: "power2.inOut",
-        onComplete: () => {
-          if (lastLineEl) lastLineEl.remove();
-          title.style.display = "none"; // حتما خط ثابت مخفی شود
-        }
-      });
-
-      if (audio) gsap.to(audio, { volume: 0, duration: 2 });
-      return;
-    }
-
-    const lineEl = document.createElement("div");
-    lineEl.className = "line moving";
-    lineEl.textContent = lines[index];
-    box.appendChild(lineEl);
-    lastLineEl = lineEl;
-
-    gsap.fromTo(lineEl,
-      { opacity: 0, y: -20 },
-      { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
-    );
-
-    setTimeout(() => {
-      gsap.to(lineEl, { opacity: 0, y: 20, duration: 1, ease: "power2.in" });
-    }, 7000);
-
-    setTimeout(() => {
-      lineEl.remove();
-      index++;
-      animateNext();
-    }, 8000);
-  }
-
-  startBtn.addEventListener("click", () => {
-    startBtn.style.display = "none";
-
-    if (audio) setTimeout(() => audio.play(), 2000);
-
-    // نمایش خط ثابت بعد از 7 ثانیه
-    setTimeout(() => {
-      title.style.display = "block";
-      gsap.fromTo(title,
-        { opacity: 0, y: -20 },
-        { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
-      );
-    }, 7000);
-
-    // شروع متن‌ها بعد از 8 ثانیه
-    setTimeout(() => {
-      index = 0;
-      animateNext();
-    }, 8000);
-  });
-
-});
-</script> -->
-
-
-
- <!-- <script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const lines = [
-    "Mit dem Beginn des neuen Jahres ist mein Herz voller neuer Liebe und neuer Hoffnung für dich. Du bist das schönste Geschenk Gottes. Durch deine Nähe ist mein Leben bunter geworden, und jeder Moment an deiner Seite ist süßer als alle Erinnerungen der Vergangenheit.",
-    "Für das neue Jahr wünsche ich mir, dass wir gemeinsam viele schöne, liebevolle Momente erleben und dass dieses neue Kapitel der Anfang von ganz vielen guten Dingen für uns wird.",
-    "Ich liebe dich und freue mich sehr auf ein Jahr voller Freude und Ruhe an deiner Seite.",
-    "Jeder Tag mit dir ist für mich ein Geschenk. Für dieses neue Jahr wünsche ich mir, dass die Wärme deiner Nähe mein Herz immer hell hält und dass wir gemeinsam all unsere Träume erreichen.",
-    "Du bist der Anfang all der schönen Dinge in meinem Leben. Dein Lächeln ist das Schönste, was ich je gesehen habe.",
-    "Draußen ist es kalt, aber mein Herz ist mit dir warm. Du hast meinem Leben Sinn gegeben, und ich bin glücklich, diesen Weg weiterhin an deiner Seite zu gehen. Frohes neues Jahr, meine Liebe.",
-    "Ich wünsche dir ein Jahr voller neuer Freuden, neuer Erfolge und Inspiration. Für mich wünsche ich mir nur: dich niemals zu verlieren."
-  ];
-
-  const box = document.getElementById("messageGroup");
-  const title = document.getElementById("title");
-  const startBtn = document.getElementById("startAnimation");
-  const audio = document.getElementById("christmasAudio");
-
-  let index = 0;
-  let lastLineEl = null;
-
-  function animateNext() {
-    if (index >= lines.length) {
-      // همه خطوط نمایش داده شدند → محو نرم آخرین خط و عنوان
-      gsap.to([lastLineEl, title], {
-        opacity: 0,
-        y: 20,
-        duration: 3,  // طولانی‌تر برای حس نرم
-        ease: "power2.inOut",
-        onComplete: () => {
-          if (lastLineEl) lastLineEl.remove();
-          title.style.display = "none";
-        }
-      });
-
-      // کاهش تدریجی موزیک همزمان
-      if (audio) gsap.to(audio, { volume: 0, duration: 3 });
-      return;
-    }
-
-    const lineEl = document.createElement("div");
-    lineEl.className = "line moving";
-    lineEl.textContent = lines[index];
-    box.appendChild(lineEl);
-    lastLineEl = lineEl;
-
-    // نمایش نرم خط
-    gsap.fromTo(lineEl,
-      { opacity: 0, y: -20 },
-      { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }
-    );
-
-    // محو تدریجی بعد از 7 ثانیه
-    setTimeout(() => {
-      gsap.to(lineEl, { opacity: 0, y: 20, duration: 1.2, ease: "power2.in" });
-    }, 7000);
-
-    // آماده‌سازی خط بعدی بعد از 8 ثانیه
-    setTimeout(() => {
-      lineEl.remove();
-      index++;
-      animateNext();
-    }, 8200); // کمی بیشتر برای حس روان‌تر
-  }
-
-  startBtn.addEventListener("click", () => {
-    startBtn.style.display = "none";
-
-    if (audio) setTimeout(() => audio.play(), 2000);
-
-    // نمایش خط ثابت با انیمیشن نرم
-    setTimeout(() => {
-      title.style.display = "block";
-      gsap.fromTo(title,
-        { opacity: 0, y: -20 },
-        { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }
-      );
-    }, 7000);
-
-    // شروع نمایش متن‌ها بعد از 8 ثانیه
-    setTimeout(() => {
-      index = 0;
-      animateNext();
-    }, 8000);
-  });
-
-});
-</script>
-  -->
 
 
 <script>
@@ -866,19 +688,6 @@ const lines = [
   "با تو هر روز عیده",
   "❤️فراموش نکن پانی همیشه دوستت داره " 
 ];
-
-
-
-
-  // const lines = [
-  //   "Mit dem Beginn des neuen Jahres ist mein Herz voller neuer Liebe und neuer Hoffnung für dich. Du bist das schönste Geschenk Gottes. Durch deine Nähe ist mein Leben bunter geworden, und jeder Moment an deiner Seite ist süßer als alle Erinnerungen der Vergangenheit.",
-  //   "Für das neue Jahr wünsche ich mir, dass wir gemeinsam viele schöne, liebevolle Momente erleben und dass dieses neue Kapitel der Anfang von ganz vielen guten Dingen für uns wird.",
-  //   "Ich liebe dich und freue mich sehr auf ein Jahr voller Freude und Ruhe an deiner Seite.",
-  //   "Jeder Tag mit dir ist für mich ein Geschenk. Für dieses neue Jahr wünsche ich mir, dass die Wärme deiner Nähe mein Herz immer hell hält und dass wir gemeinsam all unsere Träume erreichen.",
-  //   "Du bist der Anfang all der schönen Dinge in meinem Leben. Dein Lächeln ist das Schönste, was ich je gesehen habe.",
-  //   "Draußen ist es kalt, aber mein Herz ist mit dir warm. Du hast meinem Leben Sinn gegeben, und ich bin glücklich, diesen Weg weiterhin an deiner Seite zu gehen. Frohes neues Jahr, meine Liebe.",
-  //   "Ich wünsche dir ein Jahr voller neuer Freuden, neuer Erfolge und Inspiration. Für mich wünsche ich mir nur: dich niemals zu verlieren."
-  // ];
 
   const box = document.getElementById("messageGroup");
   const title = document.getElementById("title");
